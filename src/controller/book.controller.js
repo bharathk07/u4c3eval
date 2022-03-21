@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Book = require('../models/book.model');
 
-const upload = require('../middleware/uploads');
+const upload = require('../middleware/upload');
 
 router.post('', upload.single('coverImage'), async (req, res) => {
 	try {
