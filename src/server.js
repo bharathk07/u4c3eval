@@ -1,14 +1,11 @@
-const express = require("express");
-const app = express();
-const port = 8080;
+const app = require("./index");
+const connect = require("./config/db");
 
-const connect = require('./configs/db');
-
-module.exports = app.listen(port, async(req,res) => {
-    try{
+app.listen(5006, async()=>{
+    try {
         await connect();
-        console.log(`server is up and running on port:${port}`);
-    }catch(err){
-        console.log({errMessage: err.message});
+    } catch (error) {
+        console.log(error.message);
     }
-})
+    console.log("listening 5006 c3")
+});
